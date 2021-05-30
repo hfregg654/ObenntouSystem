@@ -37,6 +37,9 @@ namespace ObenntouSystem.Models
 
         public DateTime? dish_deldate { get; set; }
 
+        [StringLength(250)]
+        public string dish_pic { get; set; }
+
         public virtual OmiseMaster OmiseMaster { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

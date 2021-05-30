@@ -6,6 +6,7 @@
     <div class="container" style="height: 100%">
         <div class="row">
             <div class="col-8">
+                <asp:Literal ID="ltlWelcome" runat="server"></asp:Literal>
                 <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                 <asp:Button ID="Button1" runat="server" Text="搜尋組名" />
             </div>

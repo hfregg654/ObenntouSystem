@@ -21,6 +21,7 @@ namespace ObenntouSystem.Models
 
         public int group_omiseid { get; set; }
 
+        [Required]
         [StringLength(15)]
         public string group_name { get; set; }
 
@@ -38,6 +39,10 @@ namespace ObenntouSystem.Models
 
         [StringLength(250)]
         public string group_pic { get; set; }
+
+        [Required]
+        [StringLength(3)]
+        public string group_type { get; set; }
 
         public virtual OmiseMaster OmiseMaster { get; set; }
 

@@ -17,6 +17,8 @@ namespace ObenntouSystem.Models
 
         public int order_dishesid { get; set; }
 
+        public int order_num { get; set; }
+
         public int order_cre { get; set; }
 
         public DateTime order_credate { get; set; }

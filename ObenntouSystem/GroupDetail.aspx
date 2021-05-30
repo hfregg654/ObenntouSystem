@@ -31,6 +31,7 @@
                 </div>
                 <div class="col-12">
                     主揪：<asp:Literal ID="ltlConName" runat="server"></asp:Literal>
+                    <asp:Repeater ID="Rep_OrderCount" runat="server"></asp:Repeater>
                 </div>
             </div>
         </div>
@@ -57,11 +58,16 @@
                                     </asp:DropDownList>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
         </div>
+        <div id="adddishdiv" class="col-12 row justify-content-end" runat="server">
+            <asp:Button ID="adddishbtn" runat="server" Text="加入" />
+        </div>
+
         <div style="height: 50px"></div>
         <div class="row">
             <asp:Repeater ID="Rep_Order" runat="server" OnItemDataBound="Rep_Order_ItemDataBound">

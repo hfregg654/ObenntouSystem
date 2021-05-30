@@ -87,6 +87,15 @@ namespace ObenntouSystem
         protected global::System.Web.UI.WebControls.Literal ltlConName;
 
         /// <summary>
+        /// Rep_OrderCount 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater Rep_OrderCount;
+
+        /// <summary>
         /// Rep_Dish 控制項。
         /// </summary>
         /// <remarks>
@@ -94,6 +103,24 @@ namespace ObenntouSystem
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater Rep_Dish;
+
+        /// <summary>
+        /// adddishdiv 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adddishdiv;
+
+        /// <summary>
+        /// adddishbtn 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button adddishbtn;
 
         /// <summary>
         /// Rep_Order 控制項。

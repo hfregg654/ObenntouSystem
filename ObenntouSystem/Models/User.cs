@@ -54,6 +54,9 @@ namespace ObenntouSystem.Models
         [StringLength(15)]
         public string user_pri { get; set; }
 
+        [StringLength(250)]
+        public string user_pic { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Group> Groups { get; set; }
 

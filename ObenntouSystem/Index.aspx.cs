@@ -20,12 +20,14 @@ namespace ObenntouSystem
 
             if (info != null)
             {
+                ltlWelcome.Text = $"歡迎  {info.user_name}";
                 Linklogout.Visible = true;
                 Linklogin.Visible = false;
                 Linkcreate.Visible = true;
             }
             else
             {
+                ltlWelcome.Text = "";
                 Linklogout.Visible = false;
                 Linklogin.Visible = true;
                 Linkcreate.Visible = false;
