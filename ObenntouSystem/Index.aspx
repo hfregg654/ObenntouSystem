@@ -26,7 +26,12 @@
                                     <img src="<%#Eval("group_pic") %>" width="100" height="100" />
                                 </div>
                                 <div class="col-6">
+                                    <div class="col-12">
                                     <h2><%#Eval("group_name") %></h2>
+                                    </div>
+                                    <div class="col-12">
+                                        <%#Eval("group_type") %>
+                                    </div>
                                 </div>
                             </div>
                         </a>

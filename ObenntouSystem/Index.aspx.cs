@@ -31,7 +31,7 @@ namespace ObenntouSystem
                 Linkcreate.Visible = false;
             }
 
-            string[] colname = { "group_id", "group_name", "group_pic" };
+            string[] colname = { "group_id", "group_name", "group_pic", "group_type" };
             string[] colnamep = { "" };
             string[] p = { "" };
 
