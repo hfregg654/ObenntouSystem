@@ -48,7 +48,8 @@ namespace ObenntouSystem.Utility
                 user_name = dtuserAccount.user_name,
                 user_pri = dtuserAccount.user_pri,
                 user_phone = dtuserAccount.user_phone,
-                user_mail = dtuserAccount.user_mail
+                user_mail = dtuserAccount.user_mail,
+                user_pic = dtuserAccount.user_pic
             };
             return true;
 

@@ -30,6 +30,10 @@ namespace ObenntouSystem
 
             if (info != null)
             {
+                if (info.user_id==1)
+                {
+                    LinkBackstage.Visible = true;
+                }
                 ltlWelcome.Text = $"歡迎  {info.user_name}";
                 Linklogout.Visible = true;
                 Linklogin.Visible = false;

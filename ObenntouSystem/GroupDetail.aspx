@@ -12,7 +12,9 @@
                     <asp:Image ID="Image_G" runat="server" Width="250px" Height="250px" />
                 </div>
                 <div class="col-12">
+                    <div style="text-align:center; font-size:50px;">
                     <asp:Literal ID="ltl_omise" runat="server"></asp:Literal>
+                    </div>
                 </div>
             </div>
             <div class="col-8 row">
@@ -24,7 +26,7 @@
                         <asp:Literal ID="ltlgrouptype" runat="server"></asp:Literal>
                     </div>
                     <div runat="server" id="IsConvener">
-                        <asp:DropDownList ID="DDL_type" runat="server" >
+                        <asp:DropDownList ID="DDL_type" runat="server">
                             <asp:ListItem>未結團</asp:ListItem>
                             <asp:ListItem>結團</asp:ListItem>
                             <asp:ListItem>已到</asp:ListItem>
@@ -55,13 +57,14 @@
             </div>
         </div>
         <div style="height: 50px"></div>
+        <h4 style="text-align: center">菜單</h4>
         <div class="row">
             <asp:Repeater ID="Rep_Dish" runat="server" OnItemDataBound="Rep_Dish_ItemDataBound">
                 <ItemTemplate>
                     <div class="col-12 col-md-4" style="border: solid black 2px;">
                         <div class="row col-12">
                             <div class="col-6">
-                                <img src="\Images\Group_Black.jpg" width="100" height="100" />
+                                <img src='<%#Eval("dish_pic") %>' width="100" height="100" />
                             </div>
                             <div class="col-6">
                                 <div class="col-12">名稱：<%#Eval("dish_name") %></div>
@@ -88,22 +91,26 @@
 
 
         <div style="height: 50px"></div>
+        <h4 style="text-align: center">訂單</h4>
         <div class="row">
             <asp:Repeater ID="Rep_Order" runat="server" OnItemDataBound="Rep_Order_ItemDataBound">
                 <ItemTemplate>
-                    <div class="col-12 col-md-4 row" style="border: solid black 1px;">
-                        <div class="col-2">
-                            <asp:Button ID="kickbtn" runat="server" Text="X" CommandName="KickPeople" CommandArgument='<%#Eval("order_userid") %>' OnClick="kickbtn_Click" OnClientClick="return confirm('確定剔除？');" />
-                        </div>
-                        <div class="col-4">
-                            <%#Eval("User_name") %>
-                        </div>
-                        <div class="col-6" style="border: solid Blue 1px;">
-                            <asp:Repeater ID="Rep_Orderdish" runat="server">
-                                <ItemTemplate>
-                                    <div class="col-12"><%#Eval("DishName") %> X  <%#Eval("DishNum") %></div>
-                                </ItemTemplate>
-                            </asp:Repeater>
+                    <div class="col-12 col-md-4" style="border: solid black 1px;">
+                        <div class="row col-12">
+                            <div class="col-2">
+                                <asp:Button ID="kickbtn" runat="server" Text="X" CommandName="KickPeople" CommandArgument='<%#Eval("order_userid") %>' OnClick="kickbtn_Click" OnClientClick="return confirm('確定剔除？');" />
+                            </div>
+                            <div class="col-4">
+                                <img src='<%#Eval("user_pic") %>' width="50" height="50" />
+                                <%#Eval("User_name") %>
+                            </div>
+                            <div class="col-6">
+                                <asp:Repeater ID="Rep_Orderdish" runat="server">
+                                    <ItemTemplate>
+                                        <div class="col-12"><%#Eval("DishName") %> X  <%#Eval("DishNum") %></div>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </div>
                         </div>
                     </div>
                 </ItemTemplate>
@@ -115,7 +122,7 @@
             <div class="col-12 row">
                 <div class="col-12 row justify-content-center">
                     <div class="col-3">
-                        <img src="\Images\Group_Black.jpg" width="100" height="100" />
+                        <asp:Image ID="ImageUser" runat="server" Width="100" Height="100" />
                     </div>
                     <div class="col-9">
                         <asp:Repeater ID="Rep_Ordering" runat="server">

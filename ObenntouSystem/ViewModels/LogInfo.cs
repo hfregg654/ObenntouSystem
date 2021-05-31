@@ -12,5 +12,6 @@ namespace ObenntouSystem.ViewModels
         public string user_phone { get; set; }
         public string user_mail { get; set; }
         public string user_pri { get; set; }
+        public string user_pic { get; set; }
     }
 }

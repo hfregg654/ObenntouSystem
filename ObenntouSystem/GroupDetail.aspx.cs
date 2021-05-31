@@ -50,6 +50,7 @@ namespace ObenntouSystem
                                 IsConvener.Visible = true;
                                 LogIndiv.Visible = true;
                                 Rep_OrderCount.Visible = true;
+                                ImageUser.ImageUrl = info.user_pic;
                             }
                             else
                             {
@@ -58,6 +59,7 @@ namespace ObenntouSystem
                                 IsConvener.Visible = false;
                                 LogIndiv.Visible = true;
                                 Rep_OrderCount.Visible = false;
+                                ImageUser.ImageUrl = info.user_pic;
 
                             }
                         }
@@ -99,7 +101,7 @@ namespace ObenntouSystem
                             ltl_omise.Text = omisedata.Rows[0]["omise_name"].ToString();
                         }
 
-                        string[] dishcolname = { "dish_id", "dish_name", "dish_price" };
+                        string[] dishcolname = { "dish_id", "dish_name", "dish_price", "dish_pic" };
                         string[] dishcolnamep = { "@dish_omiseid" };
                         string[] dishp = { groupdata.Rows[0]["group_omiseid"].ToString() };
 
@@ -113,19 +115,19 @@ namespace ObenntouSystem
 
 
 
-                        string[] orderusercolname = { "Orders.order_userid", "Users.User_name" };
+                        string[] orderusercolname = { "Orders.order_userid", "Users.User_name", "Users.user_pic" };
                         string[] orderusercolnamep = { "@order_groupid" };
                         string[] orderuserp = { groupid };
 
                         string orderuserlogic = @"
                             JOIN Users ON Orders.order_userid=Users.User_id
                             WHERE Orders.order_deldate IS NULL AND Orders.order_groupid=@order_groupid
-                            GROUP BY Orders.order_userid, Users.User_name
+                            GROUP BY Orders.order_userid, Users.User_name, Users.user_pic
                             ";
                         DataTable orderuserdata = dBTool.readTable("Orders", orderusercolname, orderuserlogic, orderusercolnamep, orderuserp);
                         Rep_Order.DataSource = orderuserdata;
                         Rep_Order.DataBind();
-
+                        
 
 
 

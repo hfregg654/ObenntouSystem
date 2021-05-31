@@ -15,6 +15,7 @@
                 <asp:LinkButton ID="Linklogin" runat="server" OnClick="Linklogin_Click">登入</asp:LinkButton>
                 <asp:LinkButton ID="Linklogout" runat="server" OnClick="Linklogout_Click">登出</asp:LinkButton>
                 <asp:LinkButton ID="Linkcreate" runat="server" OnClick="Linkcreate_Click">建立</asp:LinkButton>
+                <asp:LinkButton ID="LinkBackstage" runat="server"  Visible="false">後台</asp:LinkButton>
             </div>
         </div>
         <div id="Nothingdiv" class="col-12" runat="server" style="font-size: 120px">
