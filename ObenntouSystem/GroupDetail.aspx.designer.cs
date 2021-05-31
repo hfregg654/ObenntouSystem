@@ -15,6 +15,15 @@ namespace ObenntouSystem
     {
 
         /// <summary>
+        /// HFtotalprice 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HFtotalprice;
+
+        /// <summary>
         /// Image_G 控制項。
         /// </summary>
         /// <remarks>
@@ -78,6 +87,15 @@ namespace ObenntouSystem
         protected global::System.Web.UI.WebControls.DropDownList DDL_type;
 
         /// <summary>
+        /// ChangeTypebtn 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ChangeTypebtn;
+
+        /// <summary>
         /// ltlConName 控制項。
         /// </summary>
         /// <remarks>
@@ -105,24 +123,6 @@ namespace ObenntouSystem
         protected global::System.Web.UI.WebControls.Repeater Rep_Dish;
 
         /// <summary>
-        /// adddishdiv 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adddishdiv;
-
-        /// <summary>
-        /// adddishbtn 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button adddishbtn;
-
-        /// <summary>
         /// Rep_Order 控制項。
         /// </summary>
         /// <remarks>
@@ -141,40 +141,40 @@ namespace ObenntouSystem
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl LogIndiv;
 
         /// <summary>
-        /// ltlusername 控制項。
+        /// Rep_Ordering 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltlusername;
+        protected global::System.Web.UI.WebControls.Repeater Rep_Ordering;
 
         /// <summary>
-        /// Repeater3 控制項。
+        /// OrderOKbtn 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater3;
+        protected global::System.Web.UI.WebControls.Button OrderOKbtn;
 
         /// <summary>
-        /// Button3 控制項。
+        /// OrderResetbtn 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.Button OrderResetbtn;
 
         /// <summary>
-        /// Button2 控制項。
+        /// ltlnoorder 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Literal ltlnoorder;
 
         /// <summary>
         /// BackListbtn 控制項。
