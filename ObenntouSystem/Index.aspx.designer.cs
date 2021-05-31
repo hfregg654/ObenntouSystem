@@ -15,6 +15,15 @@ namespace ObenntouSystem
     {
 
         /// <summary>
+        /// Nothingdiv 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Nothingdiv;
+
+        /// <summary>
         /// ltlWelcome 控制項。
         /// </summary>
         /// <remarks>
@@ -24,22 +33,22 @@ namespace ObenntouSystem
         protected global::System.Web.UI.WebControls.Literal ltlWelcome;
 
         /// <summary>
-        /// TextBox1 控制項。
+        /// txtName 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtName;
 
         /// <summary>
-        /// Button1 控制項。
+        /// btnSearch 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnSearch;
 
         /// <summary>
         /// Linklogin 控制項。

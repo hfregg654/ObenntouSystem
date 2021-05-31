@@ -4,11 +4,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container" style="height: 100%">
+        <div id="Nothingdiv" class="col-12" runat="server" style="font-size:120px">
+            無留言
+        </div>
         <div class="row">
             <div class="col-8">
                 <asp:Literal ID="ltlWelcome" runat="server"></asp:Literal>
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                <asp:Button ID="Button1" runat="server" Text="搜尋組名" />
+                <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+                <asp:Button ID="btnSearch" runat="server" Text="搜尋組名" OnClick="btnSearch_Click" />
             </div>
             <div class="col-4">
                 <asp:LinkButton ID="Linklogin" runat="server" OnClick="Linklogin_Click">登入</asp:LinkButton>
@@ -16,7 +19,7 @@
                 <asp:LinkButton ID="Linkcreate" runat="server" OnClick="Linkcreate_Click">建立</asp:LinkButton>
             </div>
         </div>
-        <div style="height:50px"></div>
+        <div style="height: 50px"></div>
         <div class="row">
             <asp:Repeater ID="repGroup" runat="server">
                 <ItemTemplate>
@@ -28,7 +31,7 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="col-12">
-                                    <h2><%#Eval("group_name") %></h2>
+                                        <h2><%#Eval("group_name") %></h2>
                                     </div>
                                     <div class="col-12">
                                         <%#Eval("group_type") %>
