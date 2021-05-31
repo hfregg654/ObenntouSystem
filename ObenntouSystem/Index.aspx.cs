@@ -20,6 +20,14 @@ namespace ObenntouSystem
         {
             LogInfo info = Session["IsLogined"] as LogInfo;
 
+
+            if (!IsPostBack)
+            {
+                string name = Request.QueryString["name"];
+                if (!string.IsNullOrEmpty(name))
+                    this.txtName.Text = name;
+            }
+
             if (info != null)
             {
                 ltlWelcome.Text = $"歡迎  {info.user_name}";
@@ -34,8 +42,6 @@ namespace ObenntouSystem
                 Linklogin.Visible = true;
                 Linkcreate.Visible = false;
             }
-
-
 
             BuildDataTableCommit();
         }
@@ -56,6 +62,7 @@ namespace ObenntouSystem
             }
             string name = Request.QueryString["name"];
 
+
             int totalSize;
             int _pageSize = 9;
 
@@ -72,12 +79,13 @@ namespace ObenntouSystem
 
             int pages = CalculatePages(totalSize, _pageSize);
             List<PagingLink> pagingList = new List<PagingLink>();
-            HyperLink1.NavigateUrl = $"Index.aspx?Page={pages}";
+            HLfirst.NavigateUrl = $"Index.aspx{this.GetQueryString(false, 1)}";
+            HLlast.NavigateUrl = $"Index.aspx{this.GetQueryString(false, pages)}";
             for (var i = 1; i <= pages; i++)
             {
                 pagingList.Add(new PagingLink()
                 {
-                    Link = $"Index.aspx?Page={this.GetQueryString(false, i)}",
+                    Link = $"Index.aspx{this.GetQueryString(false, i)}",
                     Name = $"{i}",
                     Title = $"前往第 {i} 頁"
                 });
@@ -89,6 +97,7 @@ namespace ObenntouSystem
 
             repGroup.DataSource = Comdata;
             repGroup.DataBind();
+
         }
 
 
@@ -150,7 +159,7 @@ namespace ObenntouSystem
                     command.Parameters.AddWithValue("@name", name);
                 else
                     command.Parameters.AddWithValue("@name", "");
-            try
+                try
                 {
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader(); //執行指令串
@@ -158,7 +167,7 @@ namespace ObenntouSystem
                     dt.Load(reader); // 將reader放入dt表
                     reader.Close();
                     connection.Close();
-                    DataTable totalSize1 = readTablePageNum();
+                    DataTable totalSize1 = readTablePageNum(name);
                     int? totalSize2 = totalSize1.Rows[0]["COUNT"] as int?;
                     totalSize = (totalSize2.HasValue) ? totalSize2.Value : 0;
                     return dt;
@@ -172,18 +181,22 @@ namespace ObenntouSystem
 
 
 
-        public DataTable readTablePageNum()
+        public DataTable readTablePageNum(string name)
         {
             string countQuery =
                 $@" SELECT 
                         COUNT(group_id) AS COUNT
                     FROM Groups
+                    WHERE group_deldate IS NULL AND group_name LIKE '%' + @name + '%'
                 ";
             //資料庫開啟並執行SQL
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(countQuery, connection);
-
+                if (!string.IsNullOrEmpty(name))
+                    command.Parameters.AddWithValue("@name", name);
+                else
+                    command.Parameters.AddWithValue("@name", "");
                 try
                 {
                     connection.Open();
@@ -252,6 +265,8 @@ namespace ObenntouSystem
 
 
             Response.Redirect("Index.aspx" + template);
+
+            this.txtName.Text=name;
         }
     }
 }

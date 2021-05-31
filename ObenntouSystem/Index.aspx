@@ -4,9 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container" style="height: 100%">
-        <div id="Nothingdiv" class="col-12" runat="server" style="font-size:120px">
-            無留言
-        </div>
+
         <div class="row">
             <div class="col-8">
                 <asp:Literal ID="ltlWelcome" runat="server"></asp:Literal>
@@ -18,6 +16,9 @@
                 <asp:LinkButton ID="Linklogout" runat="server" OnClick="Linklogout_Click">登出</asp:LinkButton>
                 <asp:LinkButton ID="Linkcreate" runat="server" OnClick="Linkcreate_Click">建立</asp:LinkButton>
             </div>
+        </div>
+        <div id="Nothingdiv" class="col-12" runat="server" style="font-size: 120px">
+            無
         </div>
         <div style="height: 50px"></div>
         <div class="row">
@@ -44,13 +45,13 @@
             </asp:Repeater>
         </div>
         <div class="row">
-            <a href="./Index.aspx?Page=1" title="前往第1頁">First</a>｜
-                <asp:Repeater runat="server" ID="repPaging">
-                    <ItemTemplate>
-                        <a href="<%# Eval("Link") %>" title="<%# Eval("Title") %>"><%# Eval("Name") %></a>｜
-                    </ItemTemplate>
-                </asp:Repeater>
-            <asp:HyperLink ID="HyperLink1" runat="server" ToolTip="前往尾頁">Last</asp:HyperLink>
+            <asp:HyperLink ID="HLfirst" runat="server" ToolTip="前往第一頁">First</asp:HyperLink>｜
+            <asp:Repeater runat="server" ID="repPaging">
+                <ItemTemplate>
+                    <a href="<%# Eval("Link") %>" title="<%# Eval("Title") %>"><%# Eval("Name") %></a>｜
+                </ItemTemplate>
+            </asp:Repeater>
+            <asp:HyperLink ID="HLlast" runat="server" ToolTip="前往尾頁">Last</asp:HyperLink>
         </div>
     </div>
 </asp:Content>
