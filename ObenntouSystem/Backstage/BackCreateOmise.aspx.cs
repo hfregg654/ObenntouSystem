@@ -48,7 +48,7 @@ namespace ObenntouSystem.Backstage
                 omise.omise_deldate = DateTime.Now;
                 model.SaveChanges();
             }
-            Response.Redirect("./BackCreateUser.aspx");
+            Response.Redirect("./BackCreateOmise.aspx");
         }
 
         protected void UpdateOmisebtn_Click(object sender, EventArgs e)

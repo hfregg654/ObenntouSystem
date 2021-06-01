@@ -64,14 +64,7 @@ namespace ObenntouSystem.Backstage
             this.TBPwd.Text = "";
             this.TBNPwd.Text = "";
             this.TBPwdC.Text = "";
-            this.lblAccerror.Text = "";
-            this.lblNameerror.Text = "";
-            this.lblPhoneerror.Text = "";
-            this.lblMailerror.Text = "";
-            this.lblPwdCerror.Text = "";
-            this.lblPwderror.Text = "";
-            this.lblNPwderror.Text = "";
-            this.lblerror.Text = "";
+            clearerror();
             this.FUpUser.Attributes.Clear();
         }
         private void clearerror()
