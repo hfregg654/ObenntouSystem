@@ -13,5 +13,32 @@ namespace ObenntouSystem.Backstage
 
     public partial class BackCreateDishes
     {
+
+        /// <summary>
+        /// CreateDishbtn 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CreateDishbtn;
+
+        /// <summary>
+        /// DDL_Omise 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DDL_Omise;
+
+        /// <summary>
+        /// Rep_Dishes 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater Rep_Dishes;
     }
 }

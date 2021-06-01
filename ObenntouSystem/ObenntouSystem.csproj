@@ -79,6 +79,7 @@
     <Content Include="Backstage\BackCreateOmise.aspx" />
     <Content Include="Backstage\BackCreateUser.aspx" />
     <Content Include="Backstage\BackIndex.aspx" />
+    <Content Include="Backstage\SettingDish.aspx" />
     <Content Include="Backstage\SettingOmise.aspx" />
     <Content Include="Backstage\SettingUser.aspx" />
     <Content Include="CreateGroup.aspx" />
@@ -127,6 +128,13 @@
     </Compile>
     <Compile Include="Backstage\BackIndex.aspx.designer.cs">
       <DependentUpon>BackIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backstage\SettingDish.aspx.cs">
+      <DependentUpon>SettingDish.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backstage\SettingDish.aspx.designer.cs">
+      <DependentUpon>SettingDish.aspx</DependentUpon>
     </Compile>
     <Compile Include="Backstage\SettingOmise.aspx.cs">
       <DependentUpon>SettingOmise.aspx</DependentUpon>
