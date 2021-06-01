@@ -447,5 +447,10 @@ namespace ObenntouSystem
 
             }
         }
+
+        protected void LinkBackstage_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Backstage/BackIndex.aspx");
+        }
     }
 }

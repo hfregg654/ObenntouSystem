@@ -75,6 +75,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Backstage\BackCreateDishes.aspx" />
+    <Content Include="Backstage\BackCreateOmise.aspx" />
+    <Content Include="Backstage\BackCreateUser.aspx" />
+    <Content Include="Backstage\BackIndex.aspx" />
     <Content Include="CreateGroup.aspx" />
     <Content Include="Global.asax" />
     <Content Include="GroupDetail.aspx" />
@@ -94,6 +98,34 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backstage\BackCreateDishes.aspx.cs">
+      <DependentUpon>BackCreateDishes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backstage\BackCreateDishes.aspx.designer.cs">
+      <DependentUpon>BackCreateDishes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backstage\BackCreateOmise.aspx.cs">
+      <DependentUpon>BackCreateOmise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backstage\BackCreateOmise.aspx.designer.cs">
+      <DependentUpon>BackCreateOmise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backstage\BackCreateUser.aspx.cs">
+      <DependentUpon>BackCreateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backstage\BackCreateUser.aspx.designer.cs">
+      <DependentUpon>BackCreateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backstage\BackIndex.aspx.cs">
+      <DependentUpon>BackIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backstage\BackIndex.aspx.designer.cs">
+      <DependentUpon>BackIndex.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CreateGroup.aspx.cs">
       <DependentUpon>CreateGroup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -169,7 +201,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Backstage\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
