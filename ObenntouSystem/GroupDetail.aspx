@@ -7,7 +7,7 @@
     <asp:HiddenField ID="HFtotalprice" runat="server" />
     <div class="container">
         <div class="col-12 row">
-            <div class="co-4">
+            <div class="col-4">
                 <div class="col-12">
                     <asp:Image ID="Image_G" runat="server" Width="250px" Height="250px" />
                 </div>

@@ -79,6 +79,7 @@
     <Content Include="Backstage\BackCreateOmise.aspx" />
     <Content Include="Backstage\BackCreateUser.aspx" />
     <Content Include="Backstage\BackIndex.aspx" />
+    <Content Include="Backstage\SettingUser.aspx" />
     <Content Include="CreateGroup.aspx" />
     <Content Include="Global.asax" />
     <Content Include="GroupDetail.aspx" />
@@ -125,6 +126,13 @@
     </Compile>
     <Compile Include="Backstage\BackIndex.aspx.designer.cs">
       <DependentUpon>BackIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backstage\SettingUser.aspx.cs">
+      <DependentUpon>SettingUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backstage\SettingUser.aspx.designer.cs">
+      <DependentUpon>SettingUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreateGroup.aspx.cs">
       <DependentUpon>CreateGroup.aspx</DependentUpon>
@@ -186,6 +194,7 @@
       <DependentUpon>ucHeader.ascx</DependentUpon>
     </Compile>
     <Compile Include="Utility\DBTool.cs" />
+    <Compile Include="Utility\FileTool.cs" />
     <Compile Include="Utility\LoginHelper.cs" />
     <Compile Include="ViewModels\LogInfo.cs" />
   </ItemGroup>

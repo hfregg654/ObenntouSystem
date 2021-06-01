@@ -33,7 +33,7 @@ namespace ObenntouSystem
 
             if (info != null)
             {
-                if (info.user_id == 1)
+                if (info.user_pri == "Manager"|| info.user_pri == "SuperManager")
                 {
                     LinkBackstage.Visible = true;
                 }
