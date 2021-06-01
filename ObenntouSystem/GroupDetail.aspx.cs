@@ -1,4 +1,5 @@
-﻿using ObenntouSystem.Utility;
+﻿using ObenntouSystem.Models;
+using ObenntouSystem.Utility;
 using ObenntouSystem.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace ObenntouSystem
     {
         static List<OrderingDish> dishdiction = new List<OrderingDish>();
         DBTool dBTool = new DBTool();
+        ContextModel model = new ContextModel();
         protected void Page_Load(object sender, EventArgs e)
         {
             DataTable groupdata = new DataTable();
@@ -127,7 +129,7 @@ namespace ObenntouSystem
                         DataTable orderuserdata = dBTool.readTable("Orders", orderusercolname, orderuserlogic, orderusercolnamep, orderuserp);
                         Rep_Order.DataSource = orderuserdata;
                         Rep_Order.DataBind();
-                        
+
 
 
 
@@ -331,24 +333,43 @@ namespace ObenntouSystem
             {
                 LogInfo info = Session["IsLogined"] as LogInfo;
                 string groupid = Request.QueryString["id"];
-
-                string[] colname = { "order_groupid", "order_userid", "order_dishesid", "order_num", "order_cre", "order_credate" };
-                string[] colnamep = { "@order_groupid", "@order_userid", "@order_dishesid", "@order_num", "@order_cre", "@order_credate" };
-                List<string> p = new List<string>();
-                foreach (OrderingDish item in dishdiction)
+                int groupidint;
+                if (groupid != null && int.TryParse(groupid, out groupidint))
                 {
-                    p.Add(groupid);
-                    p.Add(info.user_id.ToString());
-                    p.Add(item.DishID.ToString());
-                    p.Add(item.DishNum.ToString());
-                    p.Add(info.user_id.ToString());
-                    p.Add(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    var typecheck = model.Groups.Where(obj => obj.group_id == groupidint).FirstOrDefault();
+                    if (typecheck != null)
+                    {
+                        if (typecheck.group_type != "結團" && typecheck.group_type != "已到")
+                        {
+                            string[] colname = { "order_groupid", "order_userid", "order_dishesid", "order_num", "order_cre", "order_credate" };
+                            string[] colnamep = { "@order_groupid", "@order_userid", "@order_dishesid", "@order_num", "@order_cre", "@order_credate" };
+                            List<string> p = new List<string>();
+                            foreach (OrderingDish item in dishdiction)
+                            {
+                                p.Add(groupid);
+                                p.Add(info.user_id.ToString());
+                                p.Add(item.DishID.ToString());
+                                p.Add(item.DishNum.ToString());
+                                p.Add(info.user_id.ToString());
+                                p.Add(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                            }
+
+                            dBTool.InsertTable("Orders", colname, colnamep, p);
+                            dishdiction.Clear();
+
+                            Response.Redirect($"~/GroupDetail.aspx?id={groupid}");
+                        }
+                        else
+                        {
+                            Response.Write("<script>alert('此團已結團!');window.location.href ='./Index.aspx'</script>");
+                        }
+
+                    }
                 }
 
-                dBTool.InsertTable("Orders", colname, colnamep, p);
-                dishdiction.Clear();
 
-                Response.Redirect($"~/GroupDetail.aspx?id={groupid}");
+
+
             }
         }
 

@@ -15,8 +15,15 @@ namespace ObenntouSystem.Backstage
         ContextModel model = new ContextModel();
         protected void Page_Load(object sender, EventArgs e)
         {
+            LogInfo info = Session["IsLogined"] as LogInfo;
             if (!IsPostBack)
             {
+                if (info == null || (info.user_pri != "Manager" && info.user_pri != "SuperManager"))
+                {
+                    LoginHelper loginHelper = new LoginHelper();
+                    loginHelper.Logout();
+                    Response.Redirect("../Index.aspx");
+                }
                 var list = model.Users.Where(obj => obj.user_deldate == null && obj.user_pri != "SuperManager").ToList();
                 Rep_Users.DataSource = list;
                 Rep_Users.DataBind();
@@ -38,7 +45,7 @@ namespace ObenntouSystem.Backstage
         {
             Button button = sender as Button;
             LogInfo info = Session["IsLogined"] as LogInfo;
-            if (info == null)
+            if (info == null || (info.user_pri != "Manager" && info.user_pri != "SuperManager"))
             {
                 LoginHelper loginHelper = new LoginHelper();
                 loginHelper.Logout();
@@ -46,9 +53,12 @@ namespace ObenntouSystem.Backstage
             }
             int id = Convert.ToInt32(button.CommandArgument);
             var user = model.Users.Where(obj => obj.user_id == id && obj.user_deldate == null).FirstOrDefault();
-            user.user_del = info.user_id;
-            user.user_deldate = DateTime.Now;
-            model.SaveChanges();
+            if (user != null)
+            {
+                user.user_del = info.user_id;
+                user.user_deldate = DateTime.Now;
+                model.SaveChanges();
+            }
             Response.Redirect("./BackCreateUser.aspx");
         }
     }

@@ -17,8 +17,16 @@ namespace ObenntouSystem.Backstage
         DBTool dBTool = new DBTool();
         protected void Page_Load(object sender, EventArgs e)
         {
+            LogInfo info = Session["IsLogined"] as LogInfo;
+
             if (!IsPostBack)
             {
+                if (info == null || (info.user_pri != "Manager" && info.user_pri != "SuperManager"))
+                {
+                    LoginHelper loginHelper = new LoginHelper();
+                    loginHelper.Logout();
+                    Response.Redirect("../Index.aspx");
+                }
                 string userid = Request.QueryString["id"];
                 int useridint;
                 if (userid != null && int.TryParse(userid, out useridint))
@@ -87,6 +95,7 @@ namespace ObenntouSystem.Backstage
         {
             clearerror();
             LogInfo info = Session["IsLogined"] as LogInfo;
+
             if (info == null || (info.user_pri != "Manager" && info.user_pri != "SuperManager"))
             {
                 LoginHelper loginHelper = new LoginHelper();
