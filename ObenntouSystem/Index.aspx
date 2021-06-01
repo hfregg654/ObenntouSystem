@@ -1,6 +1,26 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ObenntouSystem.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="ObenntouSystem.Index" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        .togglediv {
+            display: none;
+        }
+        .Indextext{
+            text-align:center;
+        }
+    </style>
+    <script> 
+        $(document).ready(function () {
+            var divlist = document.getElementsByClassName("Togglediv");
+            for (var i = 0; i < divlist.length; i++) {
+                divlist[i].classList.add('togglediv');
+            }
+            $(".dishdiv").click(function () {
+                var td = this.getElementsByClassName("Togglediv")[0];
+                td.classList.toggle('togglediv');
+            });
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container" style="height: 100%">
@@ -30,9 +50,9 @@
         <div class="row">
             <asp:Repeater ID="repGroup" runat="server" OnItemDataBound="repGroup_ItemDataBound">
                 <ItemTemplate>
-                    <div class="col-12 col-md-6" style="border: solid black 2px;">
+                    <div class="col-12 Indextext" style="border: solid black 2px;">
                         <a href="./GroupDetail.aspx?id=<%#Eval("group_id") %>">
-                            <div class="row col-12">
+                            <div class="row col-12" style="margin: 0px; padding: 0px">
                                 <div class="col-3">
                                     <img src="<%#Eval("group_pic") %>" width="100" height="100" />
                                 </div>
@@ -49,22 +69,26 @@
                                     <div class="col-6">
                                         目前人數：<%#Eval("peoplenum") %>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-12" style="text-align:center;font-size:20px">
                                         <%#Eval("group_type") %>
                                     </div>
                                 </div>
                             </div>
-                            <div style="height: 50px"></div>
-                            <asp:HiddenField ID="HFdishomise" runat="server" Value='<%#Eval("omise_id") %>' />
-                            <div class="row col-12">
-                                <asp:Repeater ID="Rep_Indexdish" runat="server">
-                                    <ItemTemplate>
-                                        <div class="col-4"><%#Eval("dish_name") %></div>
-                                    </ItemTemplate>
-                                </asp:Repeater>
-                            </div>
-                            <div style="height: 50px"></div>
                         </a>
+                        <div class="dishdiv" style="text-align: center">
+                            菜單
+                             <div class="Togglediv" style="border: solid black 1px;">
+                                 <asp:HiddenField ID="HFdishomise" runat="server" Value='<%#Eval("omise_id") %>' />
+                                 <div class="row col-12" style="margin: 0px; padding: 0px">
+                                     <asp:Repeater ID="Rep_Indexdish" runat="server">
+                                         <ItemTemplate>
+                                             <div class="col-4" style="text-align: center; border: solid blue 1px;"><%#Eval("dish_name") %></div>
+                                         </ItemTemplate>
+                                     </asp:Repeater>
+                                 </div>
+                                 <div style="height: 50px"></div>
+                             </div>
+                        </div>
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
