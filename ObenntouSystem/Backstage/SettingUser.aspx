@@ -17,7 +17,7 @@
                 <asp:Label ID="lblNameerror" Text="" runat="server" CssClass="errorMessage" />
             </div>
             <div class="col-12">
-                電話：&emsp;&emsp;<asp:TextBox ID="TBPhone" runat="server" MaxLength="10"></asp:TextBox>
+                電話：&emsp;&emsp;<asp:TextBox ID="TBPhone" runat="server" MaxLength="10" TextMode="Number"></asp:TextBox>
                 <asp:Label ID="lblPhoneerror" Text="" runat="server" CssClass="errorMessage" />
             </div>
             <div class="col-12">

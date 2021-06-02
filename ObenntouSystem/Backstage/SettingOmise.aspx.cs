@@ -58,8 +58,6 @@ namespace ObenntouSystem.Backstage
         protected void Cancelbtn_Click(object sender, EventArgs e)
         {
             Response.Redirect("./BackCreateOmise.aspx");
-
-
         }
 
         protected void OKbtn_Click(object sender, EventArgs e)

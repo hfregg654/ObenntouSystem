@@ -17,9 +17,6 @@
         <div class="row">
             <asp:Image ID="img_pic" runat="server" Height="100px" Width="100px"></asp:Image>
             <asp:DropDownList runat="server" AutoPostBack="true" ID="DDL_Pic" OnSelectedIndexChanged="Pic_SelectedIndexChanged">
-                <asp:ListItem Selected="True" Value="/Images/Group_Blue.jpg">藍框</asp:ListItem>
-                <asp:ListItem Value="/Images/Group_Green.jpg">綠框</asp:ListItem>
-                <asp:ListItem Value="/Images/Group_Red.jpg">紅框</asp:ListItem>
             </asp:DropDownList>
         </div>
         <div class="row">

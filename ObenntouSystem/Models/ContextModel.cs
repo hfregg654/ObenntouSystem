@@ -13,6 +13,7 @@ namespace ObenntouSystem.Models
         }
 
         public virtual DbSet<Dish> Dishes { get; set; }
+        public virtual DbSet<GroupImageMaster> GroupImageMasters { get; set; }
         public virtual DbSet<Group> Groups { get; set; }
         public virtual DbSet<OmiseMaster> OmiseMasters { get; set; }
         public virtual DbSet<Order> Orders { get; set; }

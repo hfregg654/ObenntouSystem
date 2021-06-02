@@ -80,6 +80,7 @@
     <Content Include="Backstage\BackCreateUser.aspx" />
     <Content Include="Backstage\BackIndex.aspx" />
     <Content Include="Backstage\SettingDish.aspx" />
+    <Content Include="Backstage\SettingGroupPic.aspx" />
     <Content Include="Backstage\SettingOmise.aspx" />
     <Content Include="Backstage\SettingUser.aspx" />
     <Content Include="CreateGroup.aspx" />
@@ -136,6 +137,13 @@
     <Compile Include="Backstage\SettingDish.aspx.designer.cs">
       <DependentUpon>SettingDish.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Backstage\SettingGroupPic.aspx.cs">
+      <DependentUpon>SettingGroupPic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backstage\SettingGroupPic.aspx.designer.cs">
+      <DependentUpon>SettingGroupPic.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Backstage\SettingOmise.aspx.cs">
       <DependentUpon>SettingOmise.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -184,6 +192,7 @@
     <Compile Include="Models\ContextModel.cs" />
     <Compile Include="Models\Dish.cs" />
     <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\GroupImageMaster.cs" />
     <Compile Include="Models\OmiseMaster.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\User.cs" />

@@ -1,4 +1,5 @@
-﻿using ObenntouSystem.Utility;
+﻿using ObenntouSystem.Models;
+using ObenntouSystem.Utility;
 using ObenntouSystem.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -12,12 +13,12 @@ namespace ObenntouSystem
 {
     public partial class CreateGroupaspx : System.Web.UI.Page
     {
+        ContextModel model = new ContextModel();
         DBTool dBTool = new DBTool();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                img_pic.ImageUrl = DDL_Pic.SelectedValue;
                 string[] colname = { "omise_id", "omise_name" };
                 string[] colnamep = { "" };
                 string[] p = { "" };
@@ -34,7 +35,16 @@ namespace ObenntouSystem
                         Value = item["omise_id"].ToString()
                     });
                 }
-
+                var img = model.GroupImageMasters.Where(obj => obj.gpic_deldate == null).ToList();
+                for (int i = 0; i < img.Count; i++)
+                {
+                    DDL_Pic.Items.Add(new ListItem()
+                    {
+                        Text = $"圖片{i+1}",
+                        Value = img[i].gpic_path
+                    });
+                }
+                img_pic.ImageUrl = DDL_Pic.SelectedValue;
             };
 
         }

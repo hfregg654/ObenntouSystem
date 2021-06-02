@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
         <div style="height: 100px"></div>
-        <asp:Button ID="CreateDishbtn" runat="server" Text="新增" OnClick="CreateDishbtn_Click" />
+        <asp:Button ID="CreateDishbtn" runat="server" Text="新增" OnClick="CreateDishbtn_Click" CommandArgument="" />
         <asp:DropDownList ID="DDL_Omise" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DDL_Omise_SelectedIndexChanged"></asp:DropDownList>
         <div class="row">
             <asp:Repeater ID="Rep_Dishes" runat="server">

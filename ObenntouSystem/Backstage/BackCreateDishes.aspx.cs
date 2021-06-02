@@ -43,6 +43,17 @@ namespace ObenntouSystem.Backstage
 
         protected void CreateDishbtn_Click(object sender, EventArgs e)
         {
+            Response.Redirect($"./SettingDish.aspx?omise={DDL_Omise.SelectedValue}");
+        }
+
+        protected void UpdateDishbtn_Click(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            Response.Redirect($"./SettingDish.aspx?id={button.CommandArgument}");
+        }
+
+        protected void DelDishbtn_Click(object sender, EventArgs e)
+        {
             Button button = sender as Button;
             LogInfo info = Session["IsLogined"] as LogInfo;
             if (info == null || (info.user_pri != "Manager" && info.user_pri != "SuperManager"))
@@ -60,17 +71,6 @@ namespace ObenntouSystem.Backstage
                 model.SaveChanges();
             }
             Response.Redirect("./BackCreateDishes.aspx");
-        }
-
-        protected void UpdateDishbtn_Click(object sender, EventArgs e)
-        {
-            Button button = sender as Button;
-            Response.Redirect($"./SettingDish.aspx?id={button.CommandArgument}");
-        }
-
-        protected void DelDishbtn_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("./SettingDish.aspx");
         }
 
         protected void DDL_Omise_SelectedIndexChanged(object sender, EventArgs e)

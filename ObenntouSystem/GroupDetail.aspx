@@ -92,7 +92,7 @@
 
         <div style="height: 50px"></div>
         <h4 style="text-align: center">訂單</h4>
-        <div class="row">
+        <div class="row" id="orderdiv">
             <asp:Repeater ID="Rep_Order" runat="server" OnItemDataBound="Rep_Order_ItemDataBound">
                 <ItemTemplate>
                     <div class="col-12 col-md-4" style="border: solid black 1px;">

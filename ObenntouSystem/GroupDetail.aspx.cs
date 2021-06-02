@@ -285,6 +285,7 @@ namespace ObenntouSystem
             Rep_Ordering.DataSource = dishdiction;
             Rep_Ordering.DataBind();
             dishchoose.SelectedIndex = 0;
+            Response.Write("<script>window.location.hash = '#orderdiv';</script>");
         }
 
         protected void Rep_Dish_ItemDataBound(object sender, RepeaterItemEventArgs e)
